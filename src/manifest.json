@@ -1,10 +1,25 @@
 {
-    "name": "Isolate Me",
+    "name": "Focus Me",
     "description": "Website blocker",
     "version": "1.0",
     "manifest_version": 2,
     "browser_action": {
         "default_popup": "./popout/popout.html",
         "default_icon": "./popout/hello_extensions.png"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "/site-blocker.js"
+            ],
+            "run_at": "document_idle",
+            "all_frames": true
+        }
+    ],
+    "permissions": [
+        "activeTab"
+    ]
 }
