@@ -1,0 +1,10 @@
+{
+    "name": "Isolate Me",
+    "description": "Website blocker",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "./popout/popout.html",
+        "default_icon": "./popout/hello_extensions.png"
+    }
+}
