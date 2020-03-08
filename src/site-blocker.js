@@ -1,13 +1,19 @@
-let isActive = false;
+// Content Script
+// Handles reading data of the pages the user visits, and passing information to the extension
+// https://developer.chrome.com/extensions/content_scripts
 
-toggleBlocker();
+// Extension loaded on a new page
+chrome.storage.sync.get('isExtensionActive', storage => {
+    handleToggleEvent(storage.isExtensionActive);
+});
 
-function toggleBlocker() {
-    isActive = !isActive;
-    if (isActive) {
-        const url = new URL(window.location.href);
-        console.log(`Hostname: ${url.hostname}`);
-    } else {
-        console.log("Not active!");
+// Status is changed on the current tab
+chrome.storage.onChanged.addListener(changes => {
+    if (changes.isExtensionActive) {
+        handleToggleEvent(changes.isExtensionActive.newValue);
     }
+});
+
+function handleToggleEvent(state) {
+    console.log('new state:', state);
 }

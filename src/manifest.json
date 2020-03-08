@@ -10,7 +10,8 @@
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "<all_urls>",
+                "*://*/*"
             ],
             "js": [
                 "/site-blocker.js"
@@ -19,7 +20,15 @@
             "all_frames": true
         }
     ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
     "permissions": [
-        "activeTab"
+        "storage",
+        "activeTab",
+        "tabs"
     ]
 }
