@@ -16,7 +16,7 @@
             "js": [
                 "/site-blocker.js"
             ],
-            "run_at": "document_idle",
+            "run_at": "document_start",
             "all_frames": true
         }
     ],
@@ -24,11 +24,10 @@
         "scripts": [
             "background.js"
         ],
-        "persistent": false
+        "persistent": true
     },
     "permissions": [
         "storage",
-        "activeTab",
         "tabs"
     ]
 }
