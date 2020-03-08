@@ -1,5 +1,5 @@
 // Content Script
-// Handles reading data of the pages the user visits, and passing information to the extension
+// Handles reading data of the pages the user visits, and passing information to the extension. This is where we orchestrate actions based on events.
 // https://developer.chrome.com/extensions/content_scripts
 
 // Extension loaded on a new page
