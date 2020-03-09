@@ -1,6 +1,8 @@
 # Focus-Me
 A chrome extension for blocking websites.
 
+![Work In Progress](https://i.imgur.com/PRaPUTE.png)
+
 # Roadmap
 
 Core Functionality
