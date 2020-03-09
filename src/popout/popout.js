@@ -9,7 +9,7 @@ document.addEventListener(('DOMContentLoaded'), () => {
 });
 
 /* DOM Elements */
-let extensionToggle = document.getElementById('enable-site-blocking');
+let extensionToggle = document.getElementById('toggle-blocking-btn');
 let addBlockedButton = document.getElementById('blocklist');
 
 
@@ -36,7 +36,7 @@ function setDOMValues() {
     }, (tabs) => {
         // todo: handle invalid URL's
         const currentlyActiveUrl = tabs[0].url;
-        document.getElementById('blocklist').textContent = `Block ${getDomainFromUrl(currentlyActiveUrl)}?`
+        document.getElementById('domainer-banner-text').textContent = getDomainFromUrl(currentlyActiveUrl);
     });
 }
 
